@@ -2,7 +2,8 @@
 2024 Spring
 
 ## Goal
-Upload all homework&assignment
+* Upload code of Chapter
+* Upload all homework&assignment
 
 ## Subject
 Data Structure
