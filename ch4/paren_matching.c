@@ -3,6 +3,7 @@
 #include <string.h>
 #define MAX_STACK_SIZE 100
 
+// 괄호검사
 // page : 122
 
 // ===== 스택 코드의 시작 =====
