@@ -1,7 +1,7 @@
 /*
 숙제 #1 미로탐색
 
-기한 : 
+기한 : 24.04.18
 학번 : 202100249
 이름 : 김선희
 */
@@ -20,7 +20,6 @@ typedef struct element
     short c;
 } element;
 
-//
 typedef struct StackType
 {
     element data[MAX_SIZE];
@@ -38,17 +37,14 @@ char maze[MAZE_SIZE][MAZE_SIZE] = {
 	{'1', '1', '1', '1', '1', '1'},
 };
 
-//
 void init_stack(StackType *s) {
     s->top = -1;
 }
 
-//
 int is_empty(StackType *s) {
     return (s->top == -1);
 }
 
-// 
 int is_full(StackType *s) {
     return (s->top == MAZE_SIZE - 1);
 }
@@ -63,7 +59,6 @@ void push(StackType *s, element item) {
     }
 }
 
-// 
 element pop(StackType *s) {
     if (is_empty(s)) {
         fprintf(stderr, "스택 공백 에러 \n");
@@ -74,7 +69,6 @@ element pop(StackType *s) {
     }
 }
 
-// 
 void push_loc(StackType *s, int r, int c) {
     if (r < 0 || c < 0) return;
 
@@ -110,10 +104,10 @@ int main(void) {
 		c = here.c;
 		maze[r][c] = '.';
 		maze_print(maze);
-		push_loc(&s, r - 1, c);
-		push_loc(&s, r + 1, c);
-		push_loc(&s, r, c - 1);
-		push_loc(&s, r, c + 1);
+		push_loc(&s, r - 1, c);     // 위
+		push_loc(&s, r + 1, c);     // 아래
+		push_loc(&s, r, c - 1);     // 왼쪽
+		push_loc(&s, r, c + 1);     // 오른쪽
 
 		if (is_empty(&s)){
 			printf("\n실패!\n");
